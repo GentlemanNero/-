@@ -16,7 +16,7 @@ class WeatherAnalysis(object):
         #三天温差计算
         self.tmp_difference = max(float(self.day0['tmp_max']),
                                   float(self.day1['tmp_max']),
-                                  float(self.day2['tmp_max']))-
+                                  float(self.day2['tmp_max']))-\
                               min(float(self.day0['tmp_min']),
                                   float(self.day1['tmp_min']),
                                   float(self.day2['tmp_min']))
