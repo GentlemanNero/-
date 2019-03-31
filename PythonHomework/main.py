@@ -67,3 +67,4 @@ weather_app.box_init()
 weather_app.button()
 
 tkinter.mainloop()
+ 
