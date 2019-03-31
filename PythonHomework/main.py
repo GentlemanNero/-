@@ -16,7 +16,9 @@ hjson_air = json.loads(r_air.text)
 #print(hjson_air)
 
 #用于气温分析的对象初始化
-weather_analysis = WeatherAnalysis(hjson_day['HeWeather6'][0]['daily_forecast'][0],hjson_day['HeWeather6'][0]['daily_forecast'][1],hjson_day['HeWeather6'][0]['daily_forecast'][2])
+weather_analysis = WeatherAnalysis(hjson_day['HeWeather6'][0]['daily_forecast'][0],
+                                   hjson_day['HeWeather6'][0]['daily_forecast'][1],
+                                   hjson_day['HeWeather6'][0]['daily_forecast'][2])
 analysis_text = "三天平均气温： "+str(weather_analysis.average_tmp())+"\n"
 analysis_text = analysis_text+"三天温差: "+str(weather_analysis.tmp_difference())+"\n"
 #print(weather_analysis.realtime)
@@ -53,7 +55,11 @@ day1_text = day1_text+"UV指数： "+day1['uv_index']+"\n"
 
 #启动GUI
 weather_app = WeatherApp()
-for_activity = {'tmp_max':float(day0['tmp_max']),'tmp_min':float(day0['tmp_min']),'hum':float(day0['hum']),'wind_spd':day0['wind_spd'],'aqi':float(hjson_air['HeWeather6'][0]['air_now_city']['aqi'])}
+for_activity = {'tmp_max':float(day0['tmp_max']),
+                'tmp_min':float(day0['tmp_min']),
+                'hum':float(day0['hum']),
+                'wind_spd':day0['wind_spd'],
+                'aqi':float(hjson_air['HeWeather6'][0]['air_now_city']['aqi'])}
 
 weather_app.input(day0_text,day1_text,life_text,analysis_text,for_activity)
 weather_app.gui_arrange()
